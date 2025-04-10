@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Verificar Peso</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 100px;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    #imagen {
+      margin-top: 30px;
+      width: 200px;
+      display: none;
+      animation: girar 2s linear infinite;
+    }
+
+    @keyframes girar {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Verificar Peso</h1>
+  <input type="number" id="peso" placeholder="kg">
+  <button onclick="verificar()">Verificar</button>
+
+  <div>
+    <img id="imagen" src="images.jpeg" alt="No gordas">
+  </div>
+
+  <script>
+    function verificar() {
+      const peso = parseFloat(document.getElementById('peso').value);
+      const imagen = document.getElementById('imagen');
+
+      if (peso > 80) {
+        imagen.style.display = 'inline-block';
+      } else {
+        imagen.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
